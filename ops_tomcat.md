@@ -1,7 +1,7 @@
 ---
 title: "Tomcat安装"
 description: "Linux下tomcat的配置"
-date: 2024-10-12T12:38:08+08:00
+date: 2025-11-03T12:38:08+08:00
 ---
 
 |Servlet Spec|JSP Spec|EL Spec|WebSocket Spec|Authentication (JASIC) Spec|Apache Tomcat Version|Latest Released Version|Supported Java Versions|
@@ -15,13 +15,9 @@ date: 2024-10-12T12:38:08+08:00
 |Platform version|Released|Specification|Java SE Support|Important Changes|
 |-|-|-|-|-|
 |Jakarta EE 10|2022-03-31|10|Java SE 17/Java SE 11|Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.|
-|Jakarta EE 9.1|2021-05-25|9.1|Java SE 11/Java SE 8|JDK 11 support|
 |Jakarta EE 9|2020-12-08|9|Java SE 8|API namespace move from javax to jakarta|
 |Jakarta EE 8|2019-09-10|8|Java SE 8|Full compatiblity with Java EE 8|
 |Java EE 8|2017-08-31|JSR 366|Java SE 8|HTTP/2 and CDI based Security|
-|Java EE 7|2013-05-28|JSR 342|Java SE 7|WebSocket, JSON and HTML5 support|
-|Java EE 6|2009-12-10|JSR 316|Java SE 6|CDI managed Beans and REST|
-|Java EE 5|2006-05-11|JSR 244|Java SE 5|Java annotations|
 
 ## 安装JDK
 - RHEL Community    
@@ -37,22 +33,22 @@ $sudo dnf install wget tar
 下载(choose one):
 - v9.0
 ```
-$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.96/bin/apache-tomcat-9.0.96.tar.gz --no-check-certificate
+$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.111/bin/apache-tomcat-9.0.111.tar.gz --no-check-certificate
 ```
 - v11.0
 ```bash
-$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-11/v11.0.0/bin/apache-tomcat-11.0.0.tar.gz --no-check-certificate
+$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-11/v11.0.13/bin/apache-tomcat-11.0.13.tar.gz --no-check-certificate
 ```
 
 Example of extracting v9.0:
 ```bash
-$tar -zxvf apache-tomcat-9.0.96.tar.gz
+$tar -zxvf apache-tomcat-9.0.111.tar.gz
 ```
 
 ### 移动文件夹
 拷贝并重命名为tomcat
 ```bash
-$sudo cp -R apache-tomcat-9.0.96 /usr/local/tomcat
+$sudo cp -R apache-tomcat-9.0.111 /usr/local/tomcat
 ```
 
 
