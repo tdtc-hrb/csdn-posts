@@ -25,7 +25,9 @@ apt-cache madison <<package name>>
 ```
 
 # DebIan
-
+```
+sudo sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
+```
 ## sudo
 sudo.d(directory):
 ```
