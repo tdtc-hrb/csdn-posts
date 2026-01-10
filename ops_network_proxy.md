@@ -5,7 +5,9 @@ date: 2025-04-23T14:08:08+08:00
 ---
 
 # OS
-
+- Windows
+- Dibian/Ubuntu
+- FreeBSD
 ## Windows
 - cmd
 ```bash
@@ -120,16 +122,13 @@ git config --global --unset https.proxy
 ```bash
 npm config delete https-proxy
 npm config set proxy http://host:port
-npm config set http-proxy http://host:port
 npm config set https-proxy http://host:port
 npm config set strict-ssl false
 ```
-
 #### file
 ```bash
 registry=https://registry.npmjs.org/
 proxy=http://127.0.0.1:8580/
-http-proxy=http://127.0.0.1:8580
 https-proxy=http://127.0.0.1:8580
 strict-ssl=false
 ```
