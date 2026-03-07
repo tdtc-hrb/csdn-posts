@@ -1,7 +1,7 @@
 ---
 title: "Tomcat安装"
 description: "Linux下tomcat的配置"
-date: 2025-11-03T12:38:08+08:00
+date: 2026-03-03T12:38:08+08:00
 ---
 
 |Servlet Spec|JSP Spec|EL Spec|WebSocket Spec|Authentication (JASIC) Spec|Apache Tomcat Version|Latest Released Version|Supported Java Versions|
@@ -33,22 +33,22 @@ $sudo dnf install wget tar
 下载(choose one):
 - v9.0
 ```
-$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.111/bin/apache-tomcat-9.0.111.tar.gz --no-check-certificate
+$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.115/bin/apache-tomcat-9.0.115.tar.gz --no-check-certificate
 ```
 - v11.0
 ```bash
-$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-11/v11.0.13/bin/apache-tomcat-11.0.13.tar.gz --no-check-certificate
+$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-11/v11.0.18/bin/apache-tomcat-11.0.18.tar.gz --no-check-certificate
 ```
 
 Example of extracting v9.0:
 ```bash
-$tar -zxvf apache-tomcat-9.0.111.tar.gz
+$tar -zxvf apache-tomcat-9.0.115.tar.gz
 ```
 
 ### 移动文件夹
 拷贝并重命名为tomcat
 ```bash
-$sudo cp -R apache-tomcat-9.0.111 /usr/local/tomcat
+$sudo cp -R apache-tomcat-9.0.115 /usr/local/tomcat
 ```
 
 

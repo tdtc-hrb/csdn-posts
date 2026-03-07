@@ -1,7 +1,7 @@
 ---
 title: "设置proxy"
 description: "如何使用代理工具"
-date: 2025-04-23T14:08:08+08:00
+date: 2026-02-23T14:08:08+08:00
 ---
 
 # OS
@@ -27,6 +27,11 @@ ref: https://stackoverflow.com/a/47624713
 ```bash
 export http_proxy="http://192.168.1.108:1080"
 export https_proxy="http://192.168.1.108:1080"
+```
+### Msys2
+Add the above command to your profile:
+```
+/etc/profile
 ```
 
 ### With user and password
