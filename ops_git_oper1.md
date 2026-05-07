@@ -13,8 +13,17 @@ git reset --hard HEAD~1
 - "~2"表示向前回滚2个提交，以此类推。
 
 ## 2. 强制推送
+- https
 ```bash
 git push -f --set-upstream origin master
+```
+### ssh
+- [SourceTree](https://community.atlassian.com/forums/Sourcetree-questions/How-to-quot-force-quot-push/qaq-p/718539)
+```
+1. Go to Tools > Options.Select the Git tab.
+2. Check the box for Enable Force Push.
+3. (Recommended) Check Use Safe Force Push (--force-with-lease) if available, 
+4. as it prevents overwriting someone else's work.
 ```
 
 # 二、删除github发布
