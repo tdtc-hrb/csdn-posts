@@ -1,22 +1,26 @@
 ---
 title: "Tomcat安装"
 description: "Linux下tomcat的配置"
-date: 2026-03-03T12:38:08+08:00
+date: 2026-07-09T12:38:08+08:00
 ---
 
-|Servlet Spec|JSP Spec|EL Spec|WebSocket Spec|Authentication (JASIC) Spec|Apache Tomcat Version|Latest Released Version|Supported Java Versions|
-|-|-|-|-|-|-|-|-|
-|6.1|4.0|6.0|2.2|3.1|11.0.x|11.0.0|17 and later|
-|3.1|2.3|3.0|1.1|1.1|8.5.x|[8.5.100](https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.zip)|7 and later|
-|2.5|2.1|2.1|N/A|N/A|6.0.x|[6.0.53](https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.53/bin/apache-tomcat-6.0.53.zip)|5 and later|
-|2.4|2.0|N/A|N/A|N/A|5.5.x|[5.5.36](https://archive.apache.org/dist/tomcat/tomcat-5/v5.5.36/bin/apache-tomcat-5.5.36.zip)|1.4 and later|
+|Servlet Spec|Apache Tomcat Version|Supported Java Versions|
+|-|-|-|
+|6.1|11.0.x|17 and later|
+|4.0|9.0.x|8 and later|
+
+See ["which version"](https://tomcat.apache.org/whichversion.html) for details.
+
+Note: End of support for Tomcat 9.0.x has been announced as 31 March 2027.
 
 # installation
+- [Java enterprise platform history](https://en.wikipedia.org/wiki/Jakarta_EE)
+
 |Platform version|Released|Specification|Java SE Support|Important Changes|
 |-|-|-|-|-|
-|Jakarta EE 10|2022-03-31|10|Java SE 17/Java SE 11|Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.|
-|Jakarta EE 9|2020-12-08|9|Java SE 8|API namespace move from javax to jakarta|
-|Jakarta EE 8|2019-09-10|8|Java SE 8|Full compatiblity with Java EE 8|
+|Jakarta EE 11|2025-06-26[10]|11|Java SE 21 </br> Java SE 17|Data|
+|Jakarta EE 10|2022-03-31|10|Java SE 17 </br> Java SE 11|Removal of deprecated items in Servlet, Faces, CDI and EJB (Entity Beans and Embeddable Container). CDI-Build Time.|
+|Jakarta EE 8|2019-09-10|8|Java SE 8|Full compatibility with Java EE 8|
 |Java EE 8|2017-08-31|JSR 366|Java SE 8|HTTP/2 and CDI based Security|
 
 ## 安装JDK
@@ -33,22 +37,22 @@ $sudo dnf install wget tar
 下载(choose one):
 - v9.0
 ```
-$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.115/bin/apache-tomcat-9.0.115.tar.gz --no-check-certificate
+$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.120/bin/apache-tomcat-9.0.120.tar.gz --no-check-certificate
 ```
 - v11.0
 ```bash
-$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-11/v11.0.18/bin/apache-tomcat-11.0.18.tar.gz --no-check-certificate
+$wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-11/v11.0.24/bin/apache-tomcat-11.0.24.tar.gz --no-check-certificate
 ```
 
 Example of extracting v9.0:
 ```bash
-$tar -zxvf apache-tomcat-9.0.115.tar.gz
+$tar -zxvf apache-tomcat-9.0.120.tar.gz
 ```
 
 ### 移动文件夹
 拷贝并重命名为tomcat
 ```bash
-$sudo cp -R apache-tomcat-9.0.115 /usr/local/tomcat
+$sudo cp -R apache-tomcat-9.0.120 /usr/local/tomcat
 ```
 
 
