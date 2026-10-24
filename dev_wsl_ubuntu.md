@@ -3,12 +3,11 @@ title: "WSL部署local服务"
 description: "Ubuntu/Debian"
 date: 2026-10-24T15:08:08+08:00
 ---
-- Windows 10 1809+    
-缺省为WSL1
+- Windows 10 21h2+
 ```ps
 wsl -l -v
 ```
-
+缺省为WSL1
 > 在powerShell的管理员模式下运行命令!
 
 # 安装/卸载
@@ -27,8 +26,8 @@ Add-AppxPackage .\Ubuntu2404-240425.AppxBundle
 ### 卸载
 如果“普通”方式不工作，请使用“命令行”。
 
-- 普通
-  右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
+- 普通    
+右击“Ubuntu xxx” 图标，选择“Uninstall”即可。
 
 - [命令行](https://docs.microsoft.com/zh-cn/windows/wsl/reference)
 ```bash
