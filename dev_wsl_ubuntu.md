@@ -6,7 +6,7 @@ date: 2026-10-24T15:08:08+08:00
 - Windows 10 21h2+
 > 在powerShell的管理员模式下运行命令!
 
-**注意：现在大部分的IDE（CLion, VS等）都使用WSL2!**
+***注意： 目前 WSL2(Virtual Machine Platform) 与 VirtualBox 有冲突!***
 
 # 安装/卸载
 ON:
