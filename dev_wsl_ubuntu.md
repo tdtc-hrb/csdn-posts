@@ -117,16 +117,20 @@ apt autoremove -y
 
 
 # 使用
-更改源列表:
-```bash
-sudo vi /etc/apt/sources.list
-```
-```
-http://archive.ubuntu.com -> https://mirrors.aliyun.com/ubuntu/
-```
+- wsl2
+- wsl1
 
-## 访问WSL服务
-> WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL
+## WSL2
+- proxy
+
+### proxy
+在当前的WSL2 中设置代理很麻烦。
+
+即使设置了 `networkingMode=Mirrored` 也无法工作！
+
+## WSL1
+- 访问WSL1服务
+> WSL1与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL
 
 首先，在wsl中启动nginx；
 ```bash
