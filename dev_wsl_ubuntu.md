@@ -4,17 +4,37 @@ description: "Ubuntu/Debian"
 date: 2026-10-24T15:08:08+08:00
 ---
 - Windows 10 21h2+
-```ps
-wsl -l -v
-```
-缺省为WSL1
 > 在powerShell的管理员模式下运行命令!
+
+**注意：现在大部分的IDE（CLion, VS等）都使用WSL2!**
 
 # 安装/卸载
 ON:
 ```
 Control Panel -> Uninstall a program -> Turn Windows features on or off, 
 勾选“Windows Subsystem for Linux”
+```
+缺省为WSL1:
+```ps
+wsl -l -v
+```
+
+### WSL2
+> If using WSL1, skip this step.
+
+- Enable Virtual Machine feature
+```powershell
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+Reboot your Windows 10 host
+
+- [WSL2 Linux kernel update package for x64 machines](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+```powershell
+wsl --update
+```
+- Set WSL 2 as your default version
+```powershell
+wsl --set-default-version 2
 ```
 
 ## Ubuntu
@@ -39,25 +59,6 @@ wslconfig /u
 ```powershell
 Add-AppxPackage .\DistroLauncher-Appx_1.12.2.0_x64.appx
 ```
-
-### WSL2
-- Enable Virtual Machine feature
-```powershell
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-```
-Reboot your Windows 10 host
-
--  WSL Linux kernel update package
-```powershell
-wsl --update
-```
-- Install
-Click the "Debian" icon to install Debian.
- This takes some time.
-
-Set a username and password for your Debian GNU/Linux installation when prompted
-
-You are now logged in to your Debian system in command line mode
 
 ### exec
 enter wsl:
