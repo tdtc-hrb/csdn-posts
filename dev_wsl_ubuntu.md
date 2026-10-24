@@ -1,10 +1,8 @@
 ---
 title: "WSL部署local服务"
 description: "Ubuntu/Debian"
-date: 2024-12-12T18:08:08+08:00
+date: 2026-10-24T15:08:08+08:00
 ---
-Note: Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
-
 - Windows 10 1809+    
 缺省为WSL1
 ```ps
@@ -21,11 +19,9 @@ Control Panel -> Uninstall a program -> Turn Windows features on or off,
 ```
 
 ## Ubuntu
-- [Ubuntu 2004](https://aka.ms/wslubuntu2004)
-
-  从AppxBundle提取appx.
+- [Ubuntu 2004](https://learn.microsoft.com/en-us/windows/wsl/install-manual#downloading-distributions)
 ```powershell
-Add-AppxPackage .\Ubuntu_2004.xxx.appx
+Add-AppxPackage .\Ubuntu2404-240425.AppxBundle
 ```
 
 ### 卸载
@@ -128,20 +124,6 @@ sudo vi /etc/apt/sources.list
 ```
 http://archive.ubuntu.com -> https://mirrors.aliyun.com/ubuntu/
 ```
-
-## 文件互访
-  首先，使用windows记事本，建立一个testTxtFile.txt；    
-  然后，在WSL查看文件内容。
-```bash
-cd /mnt/c/Users/tdtc/
-vi testTxtFile.txt
-```
-  最后，用WSL重命名文件名:
-```bash
-mv testTxtFile.txt testFile.txt
-```
-在windows就可以看到重命名的testFile.txt。
-
 
 ## 访问WSL服务
 > WSL与windows 10共有端口，所以Windows 10已使用的端口，不要再分配给WSL
