@@ -115,7 +115,9 @@ sudo systemctl unmask systemd-resolved.service;
 sudo systemctl enable systemd-networkd.service;
 sudo systemctl mask networking;
 sudo systemctl enable systemd-resolved.service;
+sudo netplan generate
 sudo netplan try
+sudo netplan apply
 ```
 
 # Ref
