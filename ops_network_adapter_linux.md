@@ -1,34 +1,30 @@
 ---
 title: "Linux修改网卡为固定IP"
 description: "需要net-tools/netplan"
-date: 2024-03-12T08:38:08+08:00
+date: 2026-10-26T08:38:08+08:00
 ---
-- RHEL
-- Diban    
-Migrate to Debian before Ubuntu 20.04 ends support (April, 2025).
+Netplan is prevalent in systemd-based systems like Ubuntu, while ifupdown is traditional, often found in Debian and RHEL.
+
+### View network adapters
+- ipv4:
+```bash
+$ip addr
+```
+- ipv6:
+```bash
+$ip -6 addr
+```
+### virtual machine
+> VirtualBox and VMware
+
+  设置Network Adapter为Bridged
 
 # RHEL-like
-- Alma/Rocky
-- CentOS    
-Less than RHEL version 8
-
-## View
 net adapter list:
 ```
 $cd /etc/sysconfig/network-scripts
 $ls ifcfg-* -l
 ```
-
-### ipv4
-```bash
-$ip addr
-```
-
-### ipv6
-```bash
-$ip -6 addr
-```
-
 
 ## Setup
 Start job network adapter:
@@ -41,7 +37,7 @@ ONBOOT=yes
 $cd /etc/sysconfig/network-scripts
 $sudo vi ifcfg-enp0s3
 ```
-
+file info:
 ```bash
 BOOTPROTO=none
 IPADDR=192.168.1.186
@@ -61,30 +57,12 @@ This indicates that the default IPv6 route has been assigned to the interface.
 - IPV6_FAILURE_FATAL=no    
 indicates that the system won’t fail even when IPv6 fails.
 
-
-### virtual machine
-  设置Network Adapter为Bridged
-
-#### net adapter
-- vmware    
- default: eth0
-
-- vbox    
- default: enp0s3
-
-
 # Debian-like
-Debian:
-```
-sudo apt install netplan.io
-```
-
-## Ubuntu
 ```bash
 $cd /etc/netplan/
 $sudo vi 00-installer-config.yaml
 ```
-- Normal
+### Normal
 > 路由器下
 ```bash
 #This is the network config written by 'subiquity'
@@ -99,7 +77,6 @@ network:
               addresses: [192.168.0.1, 192.168.1.1]
   version: 2
 ```
-
 ### nameserver
 > 在热点下
 - nameserver 1    
@@ -126,7 +103,21 @@ network:
 
 宿主机的DNS: 192.168.69.218
 
+## Dibian
+```
+sudo apt install netplan.io
+sudo apt install systemd-resolved -y
+```
+### Migrate to Netplan.io
+```
+sudo systemctl unmask systemd-networkd.service;
+sudo systemctl unmask systemd-resolved.service;
+sudo systemctl enable systemd-networkd.service;
+sudo systemctl mask networking;
+sudo systemctl enable systemd-resolved.service;
+sudo netplan try
+```
 
 # Ref
 - [How to Configure IPv6 Network on CentOS/RHEL 8](https://www.tecmint.com/configure-ipv6-network-on-centos-rhel/)
-- [How To Manage Ubuntu / Debian Networking using Netplan](https://techviewleo.com/manage-ubuntu-debian-networking-using-netplan/)
+- [Converting Debian 10/11/12 to Netplan.io](https://pedroagrodrigues.com/posts/Debian_To_Netplan/)
