@@ -104,22 +104,7 @@ network:
 宿主机的DNS: 192.168.69.218
 
 ## Dibian
-```
-sudo apt install netplan.io
-sudo apt install systemd-resolved -y
-```
-### Migrate to Netplan.io
-```
-sudo systemctl unmask systemd-networkd.service;
-sudo systemctl unmask systemd-resolved.service;
-sudo systemctl enable systemd-networkd.service;
-sudo systemctl mask networking;
-sudo systemctl enable systemd-resolved.service;
-sudo netplan generate
-sudo netplan try
-sudo netplan apply
-```
+- [最新版的Debian网络Adapter](https://tdtc-hrb.github.io/cnblogs/post/ops-network_adapter-debian/)
 
 # Ref
-- [How to Configure IPv6 Network on CentOS/RHEL 8](https://www.tecmint.com/configure-ipv6-network-on-centos-rhel/)
-- [Converting Debian 10/11/12 to Netplan.io](https://pedroagrodrigues.com/posts/Debian_To_Netplan/)
+- [How to Configure IPv6 Network on CentOS/RHEL 8](https://www.tecmint.com/configure-ipv6-network-on-centos-rhel)
